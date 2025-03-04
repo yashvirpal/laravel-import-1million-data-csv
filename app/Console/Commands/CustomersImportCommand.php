@@ -21,5 +21,14 @@ class CustomersImportCommand extends Command
     {
         // Have fun running imports here
         // Examples can be found in the ImportHelper trait
+
+        ///$this->info("Heloooo");
+       
+        // Have fun running imports here
+        // Examples can be found in the ImportHelper trait
+        collect(file($filePath))
+        ->skip(1)
+        ->map(fn($line)=>str_getcsv($line))
+        ->dd();
     }
 }
